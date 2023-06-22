@@ -9,6 +9,24 @@ function api_docs_schema_retrieve(payload) {
 function api_v1_login_create(payload) {
   return lkiidevAPI.post(`/api/v1/login/`, payload.data)
 }
+function api_v1_nmjku_list(payload) {
+  return lkiidevAPI.get(`/api/v1/nmjku/`)
+}
+function api_v1_nmjku_create(payload) {
+  return lkiidevAPI.post(`/api/v1/nmjku/`, payload.data)
+}
+function api_v1_nmjku_retrieve(payload) {
+  return lkiidevAPI.get(`/api/v1/nmjku/${payload.id}/`)
+}
+function api_v1_nmjku_update(payload) {
+  return lkiidevAPI.put(`/api/v1/nmjku/${payload.id}/`, payload.data)
+}
+function api_v1_nmjku_partial_update(payload) {
+  return lkiidevAPI.patch(`/api/v1/nmjku/${payload.id}/`, payload.data)
+}
+function api_v1_nmjku_destroy(payload) {
+  return lkiidevAPI.delete(`/api/v1/nmjku/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return lkiidevAPI.post(`/api/v1/signup/`, payload.data)
 }
@@ -48,6 +66,12 @@ function rest_auth_user_partial_update(payload) {
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
+  api_v1_nmjku_list,
+  api_v1_nmjku_create,
+  api_v1_nmjku_retrieve,
+  api_v1_nmjku_update,
+  api_v1_nmjku_partial_update,
+  api_v1_nmjku_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
